@@ -1,15 +1,12 @@
 ﻿<template>
-  <p>Templates are formatted as well...</p>
+  <p>Templates are formatted as well...
+    </p>
 </template>
 
-<script>
-let Prettier = (format) => {
-  your.js('though')
-}
+<script setup lang="ts">
+let Prettier = (some: string) => { console.info(some); }
 </script>
 
 <style>
-.and {
-  css: too !important;
-}
+.p {color: pink !important;}
 </style>
