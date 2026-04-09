@@ -1,0 +1,3 @@
+[submodule ".github/actions/autofix-ci"]
+	path = .github/actions/autofix-ci
+	url = git@github.com:theodinspire/autofix-ci.git
