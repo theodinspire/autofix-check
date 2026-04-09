@@ -1,0 +1,32 @@
+﻿name: Apply Prettier Formatting
+on:
+  pull_request:
+    branches:
+    - main
+    types:
+    - opened
+    - reopened
+    - synchronize
+    paths:
+    - 'src/**'
+  push:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v5
+    - name: Setup Node
+      uses: actions/setup-node@v5
+    - name: Install dependencies and format
+      run: |
+        npm ci
+        npm run format
+    - name: Apply fixes
+      uses: ./.github/actions/autofix-ci
+      with:
+        commit-message: "auto: Apply Prettier format"
