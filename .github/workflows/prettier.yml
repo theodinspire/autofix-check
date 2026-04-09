@@ -1,4 +1,4 @@
-﻿name: Apply Prettier Formatting
+﻿name: autofix.ci
 on:
   pull_request:
     branches:
